@@ -1,16 +1,25 @@
-# React + Vite
+# FlowMap Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web de création de cartes de flux de production.
 
-Currently, two official plugins are available:
+## Fonctionnalités
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Drag & Drop** : Glissez des blocs Poste et Stock sur le canvas
+- **Poste de travail** : Temps de cycle, nombre de personnes, description
+- **Stock** : Stock tampon, stock max, description
+- **Connexions** : Reliez les blocs entre eux avec des flèches animées
+- **Export/Import** : Sauvegardez et rechargez vos flow maps en JSON
+- **Minimap** : Vue d'ensemble de votre flux
+- **Snap to grid** : Alignement automatique des éléments
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React + Vite
+- @xyflow/react (React Flow)
