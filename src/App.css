@@ -1,0 +1,305 @@
+/* ========== Global ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ========== Toolbar ========== */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: #1e293b;
+  color: white;
+  flex-shrink: 0;
+}
+
+.toolbar h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar-actions button {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.toolbar-actions button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.toolbar-actions .btn-danger:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+/* ========== Main Layout ========== */
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  width: 200px;
+  background: white;
+  border-right: 1px solid #e2e8f0;
+  padding: 20px 14px;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.sidebar-hint {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: grab;
+  border: 1.5px dashed #cbd5e1;
+  transition: all 0.15s;
+}
+
+.sidebar-item:hover {
+  border-color: #6366f1;
+  background: #f8fafc;
+}
+
+.sidebar-item:active {
+  cursor: grabbing;
+}
+
+.sidebar-icon {
+  font-size: 1.4rem;
+}
+
+.sidebar-item-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.sidebar-item-desc {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* ========== Canvas ========== */
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.react-flow__node {
+  cursor: pointer;
+}
+
+/* ========== Custom Nodes ========== */
+.node-poste, .node-stock {
+  background: white;
+  border-radius: 10px;
+  min-width: 160px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
+  transition: box-shadow 0.15s;
+  overflow: hidden;
+}
+
+.node-poste.selected {
+  box-shadow: 0 0 0 2px #6366f1, 0 4px 12px rgba(99,102,241,0.2);
+}
+
+.node-stock.selected {
+  box-shadow: 0 0 0 2px #f59e0b, 0 4px 12px rgba(245,158,11,0.2);
+}
+
+.node-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.poste-header {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.stock-header {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.node-icon {
+  font-size: 0.85rem;
+}
+
+.node-body {
+  padding: 10px 12px;
+}
+
+.node-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.node-info {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.info-label {
+  font-weight: 600;
+}
+
+.node-description {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Handles */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: #6366f1;
+  border: 2px solid white;
+}
+
+/* ========== Edit Panel ========== */
+.edit-panel {
+  width: 280px;
+  background: white;
+  border-left: 1px solid #e2e8f0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.edit-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.edit-panel-header h3 {
+  font-size: 0.95rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #94a3b8;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.close-btn:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.edit-panel-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.edit-panel-body label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.edit-panel-body input,
+.edit-panel-body textarea {
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.edit-panel-body input:focus,
+.edit-panel-body textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+
+.delete-btn {
+  margin-top: 8px;
+  padding: 8px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+/* ========== MiniMap ========== */
+.react-flow__minimap {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
